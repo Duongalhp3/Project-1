@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASPIRE A715-42G\\Source\\Repos\\Project_1\\Project_1\\Project.csproj": {}
+    "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASPIRE A715-42G\\Source\\Repos\\Project_1\\Project_1\\Project.csproj": {
+    "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASPIRE A715-42G\\Source\\Repos\\Project_1\\Project_1\\Project.csproj",
+        "projectUniqueName": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Project.csproj",
         "projectName": "Project",
-        "projectPath": "C:\\Users\\ASPIRE A715-42G\\Source\\Repos\\Project_1\\Project_1\\Project.csproj",
+        "projectPath": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Project.csproj",
         "packagesPath": "C:\\Users\\ASPIRE A715-42G\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASPIRE A715-42G\\Source\\Repos\\Project_1\\Project_1\\obj\\",
+        "outputPath": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASPIRE A715-42G\\AppData\\Roaming\\NuGet\\NuGet.Config",

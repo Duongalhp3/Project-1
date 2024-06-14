@@ -118,11 +118,11 @@ public abstract class OrderDAL
 
     public static int UpdateOrderAttribute(int orderId, string attributeName, object newValue)
     {
-        string query = $@"UPDATE products SET {attributeName} = @newValue WHERE product_id = @productId;";
+        string query = $@"UPDATE orders SET {attributeName} = @newValue WHERE order_id = @orderId;";
         using (MySqlCommand command = new MySqlCommand(query))
         {
             command.Parameters.AddWithValue("@newValue", newValue);
-            command.Parameters.AddWithValue("@productId", orderId);
+            command.Parameters.AddWithValue("@orderId", orderId);
             return DataBase.ExecuteNonQuery(command);
         }
     }
