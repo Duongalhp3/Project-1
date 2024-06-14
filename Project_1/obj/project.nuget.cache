@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CSVboVJk7uA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ASPIRE A715-42G\\Source\\Repos\\Project_1\\Project_1\\Project.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASPIRE A715-42G\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\ASPIRE A715-42G\\.nuget\\packages\\mysqlconnector\\2.3.7\\mysqlconnector.2.3.7.nupkg.sha512",
+    "C:\\Users\\ASPIRE A715-42G\\.nuget\\packages\\spectre.console\\0.49.1\\spectre.console.0.49.1.nupkg.sha512"
+  ],
+  "logs": []
+}
