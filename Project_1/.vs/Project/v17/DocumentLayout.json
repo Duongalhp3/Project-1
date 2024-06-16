@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\businesslayer\\employeebl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:businesslayer\\employeebl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\dataacesslayer\\orderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:dataacesslayer\\orderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Utility.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Utility.cs",
+              "RelativeDocumentMoniker": "Utility.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Utility.cs",
+              "RelativeToolTip": "Utility.cs",
+              "ViewState": "AQIAAMoAAAAAAAAAAAAAAOIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T03:47:51.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeBL.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\EmployeeBL.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\EmployeeBL.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\EmployeeBL.cs",
+              "RelativeToolTip": "BusinessLayer\\EmployeeBL.cs",
+              "ViewState": "AQIAAIIAAAAAAAAAAAAQwNABAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T02:57:49.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderDAL.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\OrderDAL.cs",
+              "RelativeDocumentMoniker": "DataAcessLayer\\OrderDAL.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\OrderDAL.cs",
+              "RelativeToolTip": "DataAcessLayer\\OrderDAL.cs",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAQwIcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T04:34:11.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataBase.cs",
+              "RelativeDocumentMoniker": "DataBase.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataBase.cs",
+              "RelativeToolTip": "DataBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T04:30:26.335Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,7 @@
-﻿public abstract class EmployeeBL
+﻿using MySqlConnector;
+using System.Reflection.PortableExecutable;
+
+public abstract class EmployeeBL
 {
     public static void IsLogin(User user)
     {
@@ -452,42 +455,13 @@
 
     public static void ViewRevenue()
     {
-        while (true)
-        {
-            Console.Clear();
-            Utility.PrintTitle("ViewRevenue");
-            Console.WriteLine("1. Review by day");
-            Console.WriteLine("2. Review by month");
-            Console.WriteLine("3. Review by year");
-            Console.WriteLine("0. Exit");
-            string query = null;
-            //string information = null;
-            while (true)
-            {
-                ConsoleKeyInfo consoleKeyInfo = Console.ReadKey(intercept: true);
-                if (consoleKeyInfo.KeyChar == '0')
-                {
-                    return;
-                }
-                else if (consoleKeyInfo.KeyChar == '1')
-                {
-                    Console.Write("Doanh thu hom nay la: " + Utility.ConvertToCurrency(OrderDAL.GetReVenue(1)));
-                    break;
-                }
-                else if (consoleKeyInfo.KeyChar == '2')
-                {
-                    Console.Write("Doanh thu hom nay la: " + Utility.ConvertToCurrency(OrderDAL.GetReVenue(2)));
-                    break;
-                }
-                else if (consoleKeyInfo.KeyChar == '3')
-                {
-                    Console.Write("Doanh thu hom nay la: " + Utility.ConvertToCurrency(OrderDAL.GetReVenue(3)));
-                    break;
-                }
-            }
-            Console.WriteLine("Press any key to come back!");
-            Console.ReadKey();
-            Console.Clear();
-        }
+        Console.Clear();
+        var (revenueDay, orderCountDay) = OrderDAL.GetReVenue(1);
+        var (revenueMonth, orderCountMonth) = OrderDAL.GetReVenue(2);
+        var (revenueYear, orderCountYear) = OrderDAL.GetReVenue(3);
+        Utility.PrintRevenueTable(revenueDay, orderCountDay, revenueMonth, orderCountMonth, revenueYear, orderCountYear);
+        Console.WriteLine("Press any key to come back!");
+        Console.ReadKey();
+        Console.Clear();
     }
 }

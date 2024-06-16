@@ -127,33 +127,48 @@ public abstract class OrderDAL
         }
     }
 
-    public static int GetReVenue(int option) // 1 is current day, 2 is current month, 3 is current year
+    public static (int revenue, int orderCount) GetReVenue(int option) // 1 is current day, 2 is current month, 3 is current year
     {
         int revenue = 0;
-        if(option == 1)
+        int orderCount = 0;
+        string query = "";
+        if (option == 1)
         {
-            string query = @"SELECT SUM(order_totalPrice) AS total_price FROM orders WHERE DAY(order_dateTime) = GETDATE().DAY AND MONTH(order_dateTime) = GETDATE().MONTH AND YEAR(order_dateTime) = GETDATE().YEAR AND order_status = 'Confirmed';";
-            using (MySqlCommand command = new MySqlCommand(query))
-            {
-                revenue = (int)DataBase.ExecuteScalar(command);
-            }
+            query = @"SELECT IFNULL(SUM(order_totalPrice), 0) AS total_price, COUNT(*) AS order_count
+                  FROM orders 
+                  WHERE DAY(order_dateTime) = DAY(CURDATE()) 
+                  AND MONTH(order_dateTime) = MONTH(CURDATE()) 
+                  AND YEAR(order_dateTime) = YEAR(CURDATE()) 
+                  AND order_status = @orderStatus";
         }
         else if (option == 2)
         {
-            string query = @"SELECT SUM(order_totalPrice) AS total_price FROM orders WHERE MONTH(order_dateTime) = GETDATE().MONTH AND YEAR(order_dateTime) = GETDATE().YEAR AND order_status = 'Confirmed';";
-            using (MySqlCommand command = new MySqlCommand(query))
-            {
-                revenue =(int)DataBase.ExecuteScalar(command);
-            }
+            query = @"SELECT IFNULL(SUM(order_totalPrice), 0) AS total_price, COUNT(*) AS order_count
+                  FROM orders 
+                  WHERE MONTH(order_dateTime) = MONTH(CURDATE()) 
+                  AND YEAR(order_dateTime) = YEAR(CURDATE()) 
+                  AND order_status = @orderStatus";
         }
         else if (option == 3)
         {
-            string query = @"SELECT SUM(order_totalPrice) AS total_price FROM orders WHERE YEAR(order_dateTime) = GETDATE().YEAR AND order_status = 'Confirmed';";
-            using (MySqlCommand command = new MySqlCommand(query))
+            query = @"SELECT IFNULL(SUM(order_totalPrice), 0) AS total_price, COUNT(*) AS order_count
+                  FROM orders 
+                  WHERE YEAR(order_dateTime) = YEAR(CURDATE()) 
+                  AND order_status = @orderStatus";
+        }
+        using (MySqlCommand command = new MySqlCommand(query))
+        {
+            command.Parameters.AddWithValue("@orderStatus", "Confirmed");
+            using (MySqlDataReader reader = DataBase.ExecuteQuery(command))
             {
-                revenue = (int)DataBase.ExecuteScalar(command);
+                if (!reader.HasRows) return (0, 0);
+                if (reader.Read())
+                {
+                    revenue = reader.GetInt32("total_price");
+                    orderCount = reader.GetInt32("order_count");
+                }
             }
         }
-        return revenue;
+        return (revenue, orderCount);
     }
 }

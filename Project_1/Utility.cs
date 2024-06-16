@@ -210,4 +210,18 @@ public abstract class Utility
         Console.Write("Press any button to back");
         Console.ReadLine();
     }
+
+    public static void PrintRevenueTable(int revenueDay, int orderCountDay, int revenueMonth, int orderCountMonth, int revenueYear, int orderCountYear)
+    {
+        var table = new Table();
+        table.Title("Bang thong ke doanh so");
+        table.AddColumn("Thong Ke").LeftAligned();
+        table.AddColumn("So Tien/So Luong").Centered();
+        table.AddRow("So Luong Don Trong Ngay: \nDoanh Thu Trong Ngay: ",orderCountDay + "\n" + Utility.ConvertToCurrency(revenueDay));
+        table.AddEmptyRow();
+        table.AddRow("So Luong Don Trong Thang: \nDoanh Thu Trong thang: ", orderCountMonth + "\n" + Utility.ConvertToCurrency(revenueMonth));
+        table.AddEmptyRow();
+        table.AddRow("So Luong Don Trong nam: \nDoanh Thu Trong nam: ", orderCountYear + "\n" + Utility.ConvertToCurrency(revenueYear));
+        AnsiConsole.Write(table);
+    }
 }
