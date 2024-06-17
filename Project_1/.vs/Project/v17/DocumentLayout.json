@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\businesslayer\\employeebl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:businesslayer\\employeebl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\businesslayer\\custonmerbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:businesslayer\\custonmerbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\businesslayer\\authbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:businesslayer\\authbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\dataacesslayer\\orderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:dataacesslayer\\orderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthBL.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\AuthBL.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\AuthBL.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\AuthBL.cs",
+              "RelativeToolTip": "BusinessLayer\\AuthBL.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAACYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T02:35:47.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Utility.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Utility.cs",
+              "RelativeDocumentMoniker": "Utility.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Utility.cs",
+              "RelativeToolTip": "Utility.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAOIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T15:12:02.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeBL.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\EmployeeBL.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\EmployeeBL.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\EmployeeBL.cs",
+              "RelativeToolTip": "BusinessLayer\\EmployeeBL.cs",
+              "ViewState": "AQIAAJ0BAAAAAAAAAAAAAI8BAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T15:08:57.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustonmerBL.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\CustonmerBL.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\CustonmerBL.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\CustonmerBL.cs",
+              "RelativeToolTip": "BusinessLayer\\CustonmerBL.cs",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAJkAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T15:08:48.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderDAL.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\OrderDAL.cs",
+              "RelativeDocumentMoniker": "DataAcessLayer\\OrderDAL.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\OrderDAL.cs",
+              "RelativeToolTip": "DataAcessLayer\\OrderDAL.cs",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T15:05:12.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T15:04:59.259Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

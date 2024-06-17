@@ -215,8 +215,8 @@ public abstract class Utility
     {
         var table = new Table();
         table.Title("Bang thong ke doanh so");
-        table.AddColumn("Thong Ke").LeftAligned();
-        table.AddColumn("So Tien/So Luong").Centered();
+        table.AddColumn("Thong Ke");
+        table.AddColumn("So Tien/So Luong");
         table.AddRow("So Luong Don Trong Ngay: \nDoanh Thu Trong Ngay: ",orderCountDay + "\n" + Utility.ConvertToCurrency(revenueDay));
         table.AddEmptyRow();
         table.AddRow("So Luong Don Trong Thang: \nDoanh Thu Trong thang: ", orderCountMonth + "\n" + Utility.ConvertToCurrency(revenueMonth));

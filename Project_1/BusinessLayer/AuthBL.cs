@@ -8,9 +8,9 @@
         User user;
         do
         {
-            Console.Write("Nhap Ten Dang Nhap: ");
+            Console.Write("-> Enter User Name: ");
             string userName = Utility.CheckInput((Console.ReadLine()));
-            Console.Write("Nhap Mat Khau: ");
+            Console.Write("-> Enter Password: ");
             string password = Utility.ReadPassword();
             user = UserDAL.VerifyUser(userName, password);
             if(user == null)
@@ -20,7 +20,7 @@
             else if(user.status == "Lock")
             {
                 Console.WriteLine("Tai khoan cua ban da bi khoa");
-                Console.Write("Press any button to back");
+                Console.Write("-> Press any key to come back");
                 Console.ReadLine();
                 return null;
             }
@@ -32,7 +32,7 @@
 
     public static void Register(string role)
     {
-        Console.Write("Nhap Ten Dang Nhap: ");
+        Console.Write("-> Enter User Name: ");
         string userName;
         bool canRegister;
         do
@@ -44,13 +44,12 @@
                 Console.Write("Ten Dang Nhap Da Ton Tai, Xin Moi Nhap Lai: ");
             }
         } while (!canRegister);
-        Console.Write("Nhap Mat Khau: ");
+        Console.Write("-> Enter Password: ");
         string password = Utility.CheckInput(Console.ReadLine());
-        Console.Write("Nhap Dia Chi: ");
+        Console.Write("-> Enter Address: ");
         string address = Utility.CheckInput(Console.ReadLine());
-        Console.Write("Nhap So Dien Thoai: ");
+        Console.Write("-> Enter Phone Number: ");
         string phoneNumber = Utility.CheckInput(Console.ReadLine());
-
         User user = new User
         {
             userName = userName,
@@ -64,7 +63,7 @@
             Console.WriteLine("Them Thanh cong ");
         }
         else Console.WriteLine("Them that bai");
-        Console.Write("Press any button to continue the program");
+        Console.Write("-> Press any key to come back");
         Console.ReadLine();
     }
 }
