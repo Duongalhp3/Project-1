@@ -149,6 +149,7 @@ public abstract class Utility
     public static void PrintTitle(string title)
     {
         AnsiConsole.Write(new FigletText(title).LeftJustified().Color(Color.SteelBlue));
+        AnsiConsole.MarkupLine("                [SteelBlue]Technology - Professionalism - Convenience[/]");
     }
 
     public static void PrintOrderDetailTable(Order order)

@@ -1,4 +1,6 @@
-﻿class Program
+﻿using Spectre.Console;
+
+class Program
 {
     static void Main(string[] args)
     {
@@ -6,11 +8,10 @@
         {
             Console.Clear();
             Utility.PrintTitle("Caffe Store");
-            Console.WriteLine("                Cong Nghe - Chuyen Nghiep - Tien Loi");
-            Console.WriteLine("----------------------------------------------------------------------------");
-            Console.WriteLine("Press 1 to login");
-            Console.WriteLine("Press 2 to register");
-            Console.WriteLine("Press 0 to exit program");
+            AnsiConsole.MarkupLine("----------------------------------------------------------------------------");
+            Console.WriteLine("Press 1 to Login");
+            Console.WriteLine("Press 2 to Register");
+            Console.WriteLine("Press 0 to Exit Program");
             while (true)
             {
                 ConsoleKeyInfo pressedKey = Console.ReadKey(intercept: true);

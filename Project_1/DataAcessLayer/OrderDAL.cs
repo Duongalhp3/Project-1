@@ -134,7 +134,7 @@ public abstract class OrderDAL
         string query = "";
         if (option == 1)
         {
-            query = @"SELECT IFNULL(SUM(order_totalPrice), 0) AS total_price, COUNT(*) AS order_count
+            query = @"SELECT SUM(order_totalPrice) AS total_price, COUNT(*) AS order_count
                   FROM orders 
                   WHERE DAY(order_dateTime) = DAY(CURDATE()) 
                   AND MONTH(order_dateTime) = MONTH(CURDATE()) 
@@ -143,7 +143,7 @@ public abstract class OrderDAL
         }
         else if (option == 2)
         {
-            query = @"SELECT IFNULL(SUM(order_totalPrice), 0) AS total_price, COUNT(*) AS order_count
+            query = @"SELECT SUM(order_totalPrice) AS total_price, COUNT(*) AS order_count
                   FROM orders 
                   WHERE MONTH(order_dateTime) = MONTH(CURDATE()) 
                   AND YEAR(order_dateTime) = YEAR(CURDATE()) 
@@ -151,7 +151,7 @@ public abstract class OrderDAL
         }
         else if (option == 3)
         {
-            query = @"SELECT IFNULL(SUM(order_totalPrice), 0) AS total_price, COUNT(*) AS order_count
+            query = @"SELECT SUM(order_totalPrice) AS total_price, COUNT(*) AS order_count
                   FROM orders 
                   WHERE YEAR(order_dateTime) = YEAR(CURDATE()) 
                   AND order_status = @orderStatus";

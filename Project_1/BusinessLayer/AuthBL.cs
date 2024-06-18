@@ -1,13 +1,15 @@
-﻿public abstract class AuthBL
+﻿using Spectre.Console;
+
+public abstract class AuthBL
 {
     public static User Login()
     {
-        Console.Clear();
-        Utility.PrintTitle("Caffe Store");
-        Console.WriteLine("-----------------------------------Login-----------------------------------");
         User user;
         do
         {
+            Console.Clear();
+            Utility.PrintTitle("Caffe Store");
+            Console.WriteLine("-----------------------------------Login-----------------------------------");
             Console.Write("-> Enter User Name: ");
             string userName = Utility.CheckInput((Console.ReadLine()));
             Console.Write("-> Enter Password: ");
@@ -15,33 +17,59 @@
             user = UserDAL.VerifyUser(userName, password);
             if(user == null)
             {
-                Console.WriteLine("Ten dang nhap hoac mat khau sai !");
+                AnsiConsole.MarkupLine("[Red]Incorrect username or password ![/]");
+                Console.Write("Do you want to login again? Press [y/n] ");
+                while (true)
+                {
+                    ConsoleKeyInfo pressedKey = Console.ReadKey(intercept: true);
+                    if (pressedKey.KeyChar == 'n' || pressedKey.KeyChar == 'N')
+                    {
+                        return null;
+                    }
+                    else if (pressedKey.KeyChar == 'y' || pressedKey.KeyChar == 'Y')
+                    {
+                        break;
+                    }
+                }
             }
             else if(user.status == "Lock")
             {
-                Console.WriteLine("Tai khoan cua ban da bi khoa");
+                AnsiConsole.MarkupLine("[Red]Your account has been locked ![/]");
                 Console.Write("-> Press any key to come back");
                 Console.ReadLine();
                 return null;
             }
         } while (user == null);
         Console.WriteLine("System is loging...");
-        Thread.Sleep(2000);
+        Thread.Sleep(1000);
         return user;
     }
 
     public static void Register(string role)
     {
-        Console.Write("-> Enter User Name: ");
         string userName;
         bool canRegister;
         do
         {
+            Console.Write("-> Enter User Name: ");
             userName = Utility.CheckInput(Console.ReadLine());
             canRegister = UserDAL.CheckUserName(userName);
             if(!canRegister)
             {
-                Console.Write("Ten Dang Nhap Da Ton Tai, Xin Moi Nhap Lai: ");
+                AnsiConsole.MarkupLine("[Red]Username already exists ![/]");
+                Console.Write("Do you want to enter again? Press [y/n] ");
+                while (true)
+                {
+                    ConsoleKeyInfo pressedKey = Console.ReadKey(intercept: true);
+                    if (pressedKey.KeyChar == 'n' || pressedKey.KeyChar == 'N')
+                    {
+                        return;
+                    }
+                    else if (pressedKey.KeyChar == 'y' || pressedKey.KeyChar == 'Y')
+                    {
+                        break;
+                    }
+                }
             }
         } while (!canRegister);
         Console.Write("-> Enter Password: ");
@@ -60,9 +88,9 @@
         };
         if (UserDAL.SaveUser(user) != 0)
         {
-            Console.WriteLine("Them Thanh cong ");
+            Console.WriteLine("Add successful ");
         }
-        else Console.WriteLine("Them that bai");
+        else AnsiConsole.MarkupLine("[Red]Add failed ![/]");
         Console.Write("-> Press any key to come back");
         Console.ReadLine();
     }

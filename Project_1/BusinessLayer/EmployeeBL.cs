@@ -5,7 +5,8 @@
         while (true)
         {
             Console.Clear();
-            Utility.PrintTitle("Management System");
+            Utility.PrintTitle("Management");
+            Console.WriteLine("----------------------------------------------------------------------------");
             Console.WriteLine("Nhan 1 de Product Management");
             Console.WriteLine("Nhan 2 de Order Management");
             Console.WriteLine("nhan 3 de View Revenue");
@@ -67,9 +68,8 @@
             }
             Console.WriteLine("Trang: <" + currentPage + "/" + pageCount + ">");
             Console.WriteLine("nhan 1 de Add product");
-            Console.WriteLine("Nhan 2 de Update Product");
-            Console.WriteLine("Nhan 3 de Remove product");
-            Console.WriteLine("Nhan 4 de Search product");
+            Console.WriteLine("Nhan 2 de Edit Product");
+            Console.WriteLine("Nhan 3 de Search product");
             Console.WriteLine("Nhan 0 de Exit");
             while (true)
             {
@@ -99,11 +99,6 @@
                     break;
                 }
                 else if (pressedKey.KeyChar == '3')
-                {
-                    RemoveProduct();
-                    break;
-                }
-                else if (pressedKey.KeyChar == '4')
                 {
                     SearchProduct();
                     break;
@@ -171,7 +166,7 @@
         Console.Clear();
         Utility.PrintTitle("Product Management");
         Console.WriteLine("------------------------------Search Product-------------------------------");
-        Console.Write("-> Enter product name want search: ");
+        Console.Write("-> Enter product name to search: ");
         string input = Utility.CheckInput(Console.ReadLine());
         List<Product> searchList = ProductDAL.GetProductByName(input);
         if (searchList == null)
@@ -201,8 +196,7 @@
             }
             Console.WriteLine("Trang: <" + currentPage + "/" + pageCount + ">");
             Console.WriteLine("Nhan Left Arrow/Right Arrow de chuyen trang");
-            Console.WriteLine("Press 1 to Update Product");
-            Console.WriteLine("Press 2 to Remove product");
+            Console.WriteLine("Press 1 to Edit Product");
             Console.WriteLine("Press 0 to Back");
             while (true)
             {
@@ -224,11 +218,6 @@
                 else if (pressedKey.KeyChar == '1')
                 {
                     EditProduct();
-                    return;
-                }
-                else if (pressedKey.KeyChar == '2')
-                {
-                    RemoveProduct();
                     return;
                 }
             }
@@ -283,7 +272,7 @@
         Console.Clear();
         Utility.PrintTitle("Product Management");
         Console.WriteLine("------------------------------Edit Product-------------------------------");
-        Console.Write("-> Enter ID product want edit: ");
+        Console.Write("-> Enter product id to edit: ");
         string input_ID = Console.ReadLine();
         Product product = ProductDAL.GetProductById(Utility.CheckDigitalInput(input_ID));
         if (product == null)
@@ -297,6 +286,8 @@
         Console.WriteLine("Press 1 to Edit Name");
         Console.WriteLine("Press 2 to Edit Price");
         Console.WriteLine("Press 3 to Edit Quantity");
+        Console.WriteLine("Press 4 to Stop Selling");
+        Console.WriteLine("Press 5 to Continue Selling");
         Console.WriteLine("Press 0 to Back");
         Console.WriteLine("-------------------------------");
         while (true)
@@ -341,34 +332,33 @@
                 else Console.WriteLine("Cap nhat that bai");
                 break;
             }
+            else if (pressedKey.KeyChar == '4')
+            {
+                if (ProductDAL.UpdateProductAttribute(product.id, "product_status", "Stop Selling") != 0)
+                {
+                    Console.WriteLine("Cap nhat thanh cong");
+                }
+                else Console.WriteLine("Cap nhat that bai");
+                break;
+            }
+            else if (pressedKey.KeyChar == '5')
+            {
+                if (product.quantity == 0)
+                {
+                    product.status = "Out Of Stock";
+                }
+                else product.status = "In Stock";
+                if (ProductDAL.UpdateProductAttribute(product.id, "product_status", product.status) != 0)
+                {
+                    Console.WriteLine("Cap nhat thanh cong");
+                }
+                else Console.WriteLine("Cap nhat that bai");
+                break;
+            }
         }
         Console.Write("-> Press any key to come back");
         Console.ReadKey();
         return;
-    }
-
-    public static void RemoveProduct()
-    {
-        Console.Clear();
-        Utility.PrintTitle("Product Management");
-        Console.WriteLine("------------------------------Remove Product-------------------------------");
-        Console.Write("-> Enter id product want remove: ");
-        string input_ID = Console.ReadLine();
-        Product product = ProductDAL.GetProductById(Utility.CheckDigitalInput(input_ID));
-        if (product == null)
-        {
-            Console.WriteLine("cannot found");
-            Console.Write("-> Press any key to come back");
-            Console.ReadKey();
-            return;
-        }
-        if (ProductDAL.UpdateProductAttribute(product.id, "product_status", "Removed") != 0)
-        {
-            Console.WriteLine("Cap hat thanh cong");
-        }
-        else Console.WriteLine("Cap nhat that bai");
-        Console.Write("-> Press any key to come back");
-        Console.ReadKey();
     }
 
     public static void ProcessingOrder()
@@ -399,7 +389,14 @@
             }
             else if (pressedKey.KeyChar == '1')
             {
-                if (order.status == "Confirmed")
+                if (order.status == "Cancelled")
+                {
+                    Console.WriteLine("This order has been cancelled, can not confirmed.");
+                    Console.Write("-> Press any key to come back");
+                    Console.ReadKey();
+                    return;
+                }
+                else if (order.status == "Confirmed")
                 {
                     Console.WriteLine("This order has been confirmed.");
                     Console.Write("-> Press any key to come back");
@@ -442,7 +439,7 @@
     {
         Console.Clear();
         Utility.PrintTitle("Revenue Management");
-        Console.WriteLine("---------------------------------Revenue----------------------------------");
+        Console.WriteLine("-------------------------------View Revenue--------------------------------");
         var (revenueDay, orderCountDay) = OrderDAL.GetReVenue(1);
         var (revenueMonth, orderCountMonth) = OrderDAL.GetReVenue(2);
         var (revenueYear, orderCountYear) = OrderDAL.GetReVenue(3);
