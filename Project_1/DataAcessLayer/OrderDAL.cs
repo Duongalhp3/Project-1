@@ -2,6 +2,8 @@
 
 public abstract class OrderDAL
 {
+    private static List<string> statusList = new List<string> { "Pending", "Confirmed", "Cancelled" };
+
     public static Order GetOrderById(int orderId)
     {
         Order order = null;
@@ -34,7 +36,7 @@ public abstract class OrderDAL
                         id = reader.GetInt32("product_id"),
                         name = reader.GetString("product_name"),
                         price = reader.GetInt32("product_price"),
-                        quantity = reader.GetInt32("orderdetail_quantity")
+                        quantity = reader.GetInt32("orderDetail_quantity")
                     };
                     order.orderProductList.Add(product);
                 }
@@ -68,7 +70,7 @@ public abstract class OrderDAL
         {
             orderList[i] = OrderDAL.GetOrderById(orderList[i].id);
         }
-        return orderList;
+        return Utility.SortByStatus<Order>(orderList, order => order.status, statusList);
     }
 
     public static List<Order> GetAllOrder()
@@ -94,7 +96,7 @@ public abstract class OrderDAL
         {
             orderList[i] = OrderDAL.GetOrderById(orderList[i].id);
         }
-        return orderList;
+        return Utility.SortByStatus<Order>(orderList, order => order.status, statusList);
     }
 
     public static int SaveOrder(Order order)

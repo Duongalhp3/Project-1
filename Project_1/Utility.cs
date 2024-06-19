@@ -224,4 +224,9 @@ public abstract class Utility
         table.AddRow("Number of Orders This Year:\nRevenue This Year:", orderCountYear + "\n" + Utility.ConvertToCurrency(revenueYear));
         AnsiConsole.Write(table);
     }
+
+    public static List<T> SortByStatus<T>(List<T> list, Func<T, string> getStatus, List<string> statusList)
+    {
+        return list.OrderBy(item => statusList.IndexOf(getStatus(item))).ToList();
+    }
 }

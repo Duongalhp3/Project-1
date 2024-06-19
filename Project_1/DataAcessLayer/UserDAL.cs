@@ -2,6 +2,8 @@
 
 public abstract class UserDAL
 {
+    private static List<string> statusList = new List<string> { "Active", "Lock"};
+
     public static User GetUserById(int id)
     {
         string query = @"SELECT * FROM users WHERE user_id = @userId;";
@@ -53,7 +55,7 @@ public abstract class UserDAL
                 }
             }
         }
-        return userList;
+        return Utility.SortByStatus<User>(userList, user => user.status, statusList);
     }
 
     public static List<User> GetAllUser()
@@ -81,7 +83,7 @@ public abstract class UserDAL
                 }
             }
         }
-        return userList;
+        return Utility.SortByStatus<User>(userList, user => user.status, statusList);
     }
 
     public static int SaveUser(User user)

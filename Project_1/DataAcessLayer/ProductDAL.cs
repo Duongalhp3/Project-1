@@ -1,8 +1,9 @@
 ﻿using MySqlConnector;
-using System.ComponentModel;
 
 public abstract class ProductDAL
 {
+    private static List<string> statusList = new List<string> {"In Stock", "Out Of Stock", "Stop Selling"};
+
     public static Product GetProductById(int id)
     {
         string query = @"SELECT * FROM products WHERE product_id = @productId;";
@@ -50,7 +51,7 @@ public abstract class ProductDAL
                 }
             }
         }
-        return productList;
+        return Utility.SortByStatus<Product>(productList, product => product.status, statusList);
     }
 
     public static List<Product> GetAllProduct()
@@ -76,7 +77,7 @@ public abstract class ProductDAL
                 }
             }
         }
-        return productList;
+        return Utility.SortByStatus<Product>(productList, product => product.status, statusList);
     }
 
     public static int SaveProduct(Product product)
