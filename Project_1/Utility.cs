@@ -188,41 +188,40 @@ public abstract class Utility
 
     public static void ChangePassword(User user)
     {
-        string oldPassword, newPassword;
         Console.Clear();
         Utility.PrintTitle("Caffe Store");
         Console.WriteLine("------------------------------Change Password------------------------------");
-        Console.Write("Nhap mat khau cu: ");
-        do
+        Console.Write("-> Enter old password: ");
+        string oldPassword = Utility.CheckInput(Utility.ReadPassword());
+        if (user.password != oldPassword)
         {
-            oldPassword = Utility.CheckInput(Utility.ReadPassword());
-            if (user.password != oldPassword)
-            {
-                Console.Write("Mat khau khong dung, xin moi nhap lai: ");
-            }
-        } while (user.password != oldPassword);
-        Console.Write("Nhap mat khau moi: ");
-        newPassword = Utility.CheckInput(Utility.ReadPassword());
+            AnsiConsole.MarkupLine("[Red]Incorrect password[/]");
+            Console.Write("-> Press any key to go back");
+            Console.ReadLine();
+            return;
+        }
+        Console.Write("-> Enter new password: ");
+        string newPassword = Utility.CheckInput(Utility.ReadPassword());
         if (UserDAL.UpdateUserAttribute(user.id, "user_password", newPassword) != 0)
         {
-            Console.WriteLine("Thay doi mat khau thanh cong");
+            Console.WriteLine("Password changed successfully");
         }
-        else Console.WriteLine(" Thay doi mat khau that bai");
-        Console.Write("Press any button to back");
+        else AnsiConsole.MarkupLine("[Red]Password changed failed ![/]");
+        Console.Write("-> Press any key to go back");
         Console.ReadLine();
     }
 
     public static void PrintRevenueTable(int revenueDay, int orderCountDay, int revenueMonth, int orderCountMonth, int revenueYear, int orderCountYear)
     {
         var table = new Table();
-        table.Title("Bang thong ke doanh so");
-        table.AddColumn("Thong Ke");
-        table.AddColumn("So Tien/So Luong");
-        table.AddRow("So Luong Don Trong Ngay: \nDoanh Thu Trong Ngay: ",orderCountDay + "\n" + Utility.ConvertToCurrency(revenueDay));
+        table.Title("Revenue Statistics");
+        table.AddColumn("Statistics");
+        table.AddColumn("Amount/Quantity");
+        table.AddRow("Number of Orders Today:\nRevenue Today:", orderCountDay + "\n" + Utility.ConvertToCurrency(revenueDay));
         table.AddEmptyRow();
-        table.AddRow("So Luong Don Trong Thang: \nDoanh Thu Trong thang: ", orderCountMonth + "\n" + Utility.ConvertToCurrency(revenueMonth));
+        table.AddRow("Number of Orders This Month:\nRevenue This Month:", orderCountMonth + "\n" + Utility.ConvertToCurrency(revenueMonth));
         table.AddEmptyRow();
-        table.AddRow("So Luong Don Trong nam: \nDoanh Thu Trong nam: ", orderCountYear + "\n" + Utility.ConvertToCurrency(revenueYear));
+        table.AddRow("Number of Orders This Year:\nRevenue This Year:", orderCountYear + "\n" + Utility.ConvertToCurrency(revenueYear));
         AnsiConsole.Write(table);
     }
 }

@@ -18,7 +18,7 @@ public abstract class AuthBL
             if(user == null)
             {
                 AnsiConsole.MarkupLine("[Red]Incorrect username or password ![/]");
-                Console.Write("Do you want to login again? Press [y/n] ");
+                Console.Write("Do you want to login again. Press [y/n] ");
                 while (true)
                 {
                     ConsoleKeyInfo pressedKey = Console.ReadKey(intercept: true);
@@ -35,7 +35,7 @@ public abstract class AuthBL
             else if(user.status == "Lock")
             {
                 AnsiConsole.MarkupLine("[Red]Your account has been locked ![/]");
-                Console.Write("-> Press any key to come back");
+                Console.Write("-> Press any key to go back");
                 Console.ReadLine();
                 return null;
             }
@@ -88,10 +88,10 @@ public abstract class AuthBL
         };
         if (UserDAL.SaveUser(user) != 0)
         {
-            Console.WriteLine("Add successful ");
+            Console.WriteLine("Add successfully ");
         }
         else AnsiConsole.MarkupLine("[Red]Add failed ![/]");
-        Console.Write("-> Press any key to come back");
+        Console.Write("-> Press any key to go back");
         Console.ReadLine();
     }
 }

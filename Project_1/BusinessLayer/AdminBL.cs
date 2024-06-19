@@ -1,4 +1,6 @@
-﻿public abstract class AdminBL
+﻿using Spectre.Console;
+
+public abstract class AdminBL
 {
     public static void IsLogin(User user)
     {
@@ -24,13 +26,13 @@
                     Console.Write(new string(' ', Console.WindowWidth));
                 }
             }
-            Console.WriteLine("Trang: <" + currentPage + "/" + pageCount + ">");
-            Console.WriteLine("Nhan Left Arrow/Right Arrow de chuyen trang");
-            Console.WriteLine("Nhan 1 de them tai khoan nhan vien");
-            Console.WriteLine("Nhan 2 de tim kiem nguoi dung");
-            Console.WriteLine("Nhan 3 de edit tai khoan");
-            Console.WriteLine("Nhan 4 de thay doi mat khau");
-            Console.WriteLine("Nhan 0 de dang xuat");
+            Console.WriteLine("Page: <" + currentPage + "/" + pageCount + ">");
+            Console.WriteLine("Press Left Arrow/Right Arrow to change page");
+            Console.WriteLine("Press 1 to Add Employee Account");
+            Console.WriteLine("Press 2 to Search User");
+            Console.WriteLine("Press 3 to Edit Account");
+            Console.WriteLine("Press 4 to Change Password");
+            Console.WriteLine("Press 0 to Exit");
             while (true)
             {
                 ConsoleKeyInfo pressedKey = Console.ReadKey(intercept: true);
@@ -85,7 +87,7 @@
         Console.Clear();
         Utility.PrintTitle("User Management");
         Console.WriteLine("--------------------------------Search User--------------------------------");
-        Console.Write("Nhap Ten San Pham Can Tim: ");
+        Console.Write("-> Enter user name to search: ");
         string input = Utility.CheckInput(Console.ReadLine());
         int pageSize = 10;
         int currentPage = 1;
@@ -95,8 +97,8 @@
             searchList.RemoveAll(x => x.id == 1);
             if (searchList == null || searchList.Count == 0)
             {
-                Console.WriteLine("Khong tim thay nguoi dung can tim");
-                Console.Write("Press any button to back");
+                AnsiConsole.MarkupLine("[Red]The user not found ![/]");
+                Console.Write("-> Press any key to go back");
                 Console.ReadLine();
                 return;
             }
@@ -114,10 +116,10 @@
                     Console.Write(new string(' ', Console.WindowWidth));
                 }
             }
-            Console.WriteLine("Trang: <" + currentPage + "/" + pageCount + ">");
-            Console.WriteLine("Nhan Left Arrow/Right Arrow de chuyen trang");
-            Console.WriteLine("Nhan 1 de edit account");
-            Console.WriteLine("Nhan 0 de tro lai");
+            Console.WriteLine("Page: <" + currentPage + "/" + pageCount + ">");
+            Console.WriteLine("Press Left Arrow/Right Arrow to change page");
+            Console.WriteLine("Press 1 to Edit Account");
+            Console.WriteLine("Press 0 to Exit");
             while (true)
             {
                 ConsoleKeyInfo pressedKey = Console.ReadKey(intercept: true);
@@ -155,20 +157,20 @@
         Console.Clear();
         Utility.PrintTitle("User Management");
         Console.WriteLine("--------------------------------Edit Account-------------------------------");
-        Console.Write("Nhap id user muon edit: ");
+        Console.Write("-> Enter user id to edit: ");
         int id = int.Parse(Utility.CheckInput(Console.ReadLine()));
         User user = UserDAL.GetUserById(id);
         if (user == null || user.id == 1)
         {
-            Console.Write("Id khong hop le");
-            Console.Write("Press any button to back");
+            AnsiConsole.MarkupLine("[Red]Invalid id ![/]");
+            Console.Write("Press any key to go back");
             Console.ReadLine();
             return;
         }
         Console.WriteLine("---------------------------------------");
-        Console.WriteLine("Nhan 1 de khoa tai khoan");
-        Console.WriteLine("Nhan 2 de mo tai khoan");
-        Console.WriteLine("Nhan 0 de Thoat");
+        Console.WriteLine("Press 1 to Lock Account");
+        Console.WriteLine("Press 2 to Unlock Account");
+        Console.WriteLine("Press 0 to Exit");
         Console.WriteLine("---------------------------------------");
         while (true)
         {
@@ -181,14 +183,14 @@
             {
                 if (user.status == "Lock")
                 {
-                    Console.WriteLine("Tai khoan nay da bi khoa");
+                    AnsiConsole.MarkupLine("[Red]This account has been locked ![/]");
                 }
                 else if (UserDAL.UpdateUserAttribute(id, "user_status", "Lock") != 0)
                 {
-                    Console.WriteLine("Khoa thanh cong");
+                    Console.WriteLine("Lock successful");
                 }
-                else Console.WriteLine("Khoa that bai");
-                Console.Write("Press any button to back");
+                else AnsiConsole.MarkupLine("[Red]Lock failed ![/]");
+                Console.Write("-> Press any key to go back");
                 Console.ReadLine();
                 return;
             }
@@ -196,14 +198,14 @@
             {
                 if (user.status == "Active")
                 {
-                    Console.WriteLine("Tai khoan nay dang ative");
+                    AnsiConsole.MarkupLine("[Red]This account has been unlocked ![/]");
                 }
                 else if (UserDAL.UpdateUserAttribute(user.id, "user_status", "Active") != 0)
                 {
-                    Console.WriteLine("Mo tai khoan thanh cong");
+                    Console.WriteLine("Unlocked successfully");
                 }
-                else Console.WriteLine("Mo tai khoan that bai");
-                Console.Write("Press any button to back");
+                else AnsiConsole.MarkupLine("[Red]Unlocking failed ![/]");
+                Console.Write("-> Press any key to go back");
                 Console.ReadLine();
                 return;
             }

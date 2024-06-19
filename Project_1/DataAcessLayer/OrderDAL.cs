@@ -161,11 +161,16 @@ public abstract class OrderDAL
             command.Parameters.AddWithValue("@orderStatus", "Confirmed");
             using (MySqlDataReader reader = DataBase.ExecuteQuery(command))
             {
-                if (!reader.HasRows) return (0, 0);
                 if (reader.Read())
                 {
-                    revenue = reader.GetInt32("total_price");
-                    orderCount = reader.GetInt32("order_count");
+                    if (!reader.IsDBNull(reader.GetOrdinal("total_price")))
+                    {
+                        revenue = reader.GetInt32("total_price");
+                    }
+                    if (!reader.IsDBNull(reader.GetOrdinal("order_count")))
+                    {
+                        orderCount = reader.GetInt32("order_count");
+                    }
                 }
             }
         }

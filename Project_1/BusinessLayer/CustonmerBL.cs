@@ -25,12 +25,12 @@ public abstract class CustomerBL
                     Console.Write(new string(' ', Console.WindowWidth));
                 }
             }
-            Console.WriteLine("Trang: <" + currentPage + "/" + pageCount + ">");
+            Console.WriteLine("Page: <" + currentPage + "/" + pageCount + ">");
             Console.WriteLine("Press Left Arrow/Right Arrow to change page");
             Console.WriteLine("Press 1 to Purchase");
             Console.WriteLine("Press 2 to Search Product");
             Console.WriteLine("Press 3 to View Cart");
-            Console.WriteLine("Press 4 to View Orders");
+            Console.WriteLine("Press 4 to View My Order");
             Console.WriteLine("Press 5 to Change Password");
             Console.WriteLine("Press 0 to Logout");
             while (true)
@@ -116,7 +116,7 @@ public abstract class CustomerBL
                     return;
                 }
             }
-            Console.WriteLine("Do you want to buy more items? Press [y/n] ");
+            Console.WriteLine("Do you want to buy more items. Press [y/n] ");
             while (true)
             {
                 ConsoleKeyInfo pressedKey = Console.ReadKey(intercept: true);
@@ -137,13 +137,13 @@ public abstract class CustomerBL
         Console.Clear();
         Utility.PrintTitle("Online Shop");
         Console.WriteLine("------------------------------Search Product-------------------------------");
-        Console.Write("-> Enter the name of the product to search: ");
+        Console.Write("-> Enter product name to search: ");
         string input = Utility.CheckInput(Console.ReadLine());
         List<Product> searchList = ProductDAL.GetProductByName(input);
         if (searchList == null)
         {
-            AnsiConsole.MarkupLine("[Red]Product not found ![/]");
-            Console.Write("Press any key to go back");
+            AnsiConsole.MarkupLine("[Red]The product not found ![/]");
+            Console.Write("-> Press any key to go back");
             Console.ReadLine();
             return;
         }
@@ -212,8 +212,8 @@ public abstract class CustomerBL
             Console.WriteLine("-----------------------------------Cart------------------------------------");
             if (order.orderProductList.Count == 0)
             {
-                AnsiConsole.MarkupLine("[Red]The cart is empty![/]");
-                Console.Write("-> Press any button to back");
+                AnsiConsole.MarkupLine("[Red]The cart is empty ![/]");
+                Console.Write("-> Press any key to go back");
                 Console.ReadLine();
                 return;
             }
@@ -357,7 +357,7 @@ public abstract class CustomerBL
         Product product = order.orderProductList.Find(x => x.id == id);
         if (product == null)
         {
-            AnsiConsole.MarkupLine("[Red]Invalid ID[/]");
+            AnsiConsole.MarkupLine("[Red]Invalid id ![/]");
             Console.Write("-> Press any button to back");
             Console.ReadLine();
             return;
@@ -382,9 +382,9 @@ public abstract class CustomerBL
                 }
                 else
                 {
-                    AnsiConsole.MarkupLine("[Red]Delete Failed[/]");
+                    AnsiConsole.MarkupLine("[Red]Delete Failed ![/]");
                 }
-                Console.Write("-> Press any button to back");
+                Console.Write("-> Press any key to go back");
                 Console.ReadLine();
                 break;
             }
@@ -394,7 +394,7 @@ public abstract class CustomerBL
                 if (product1.status == "Out Of Stock")
                 {
                     AnsiConsole.MarkupLine("[Red]This product is out of stock ![/]");
-                    Console.Write("-> Press any button to back");
+                    Console.Write("-> Press any key to go back");
                     Console.ReadLine();
                     break;
                 }
@@ -403,13 +403,13 @@ public abstract class CustomerBL
                 if (newQuantity < 1 || newQuantity > product1.quantity)
                 {
                     AnsiConsole.MarkupLine("[Red]Invalid quantity ![/]");
-                    Console.Write("-> Press any button to back");
+                    Console.Write("-> Press any key to go back");
                     Console.ReadLine();
                     return;
                 }
                 order.orderProductList.Find(x => x.id == id).quantity = newQuantity;
                 Console.WriteLine("Successfully edited quantity");
-                Console.Write("-> Press any button to back");
+                Console.Write("-> Press any key to go back");
                 Console.ReadLine();
                 break;
             }
@@ -432,7 +432,7 @@ public abstract class CustomerBL
         }
         if (!canPayment)
         {
-            Console.Write("-> Press any button to back");
+            Console.Write("-> Press any key to go back");
             Console.ReadLine();
             return;
         }
@@ -468,34 +468,34 @@ public abstract class CustomerBL
             Console.WriteLine("Order Successfully");
         }
         else AnsiConsole.MarkupLine("[Red]Order Failed ![/]");
-        Console.Write("-> Press any button to back");
+        Console.Write("-> Press any key to go back");
         Console.ReadLine();
         return;
     }
 
     private static Product ChoiceProduct()
     {
-        Console.Write("->Enter Product Id to Purchase: ");
+        Console.Write("-> Enter product id to purchase: ");
         int id = int.Parse(Utility.CheckInput(Console.ReadLine()));
         Product product = ProductDAL.GetProductById(id);
         if (product == null)
         {
             AnsiConsole.MarkupLine("[Red]Invalid Id ![/]");
-            Console.Write("-> Press any button to back");
+            Console.Write("-> Press any key to go back");
             Console.ReadLine();
             return null;
         }
         else if (product.status == "Out Of Stock")
         {
             AnsiConsole.MarkupLine("[Red]The product is out of stock ![/]");
-            Console.Write("-> Press any button to back");
+            Console.Write("-> Press any key to go back");
             Console.ReadLine();
             return null;
         }
         else if (product.status == "Stop Selling")
         {
             AnsiConsole.MarkupLine("[Red]The product is stop selling ![/]");
-            Console.Write("-> Press any button to back");
+            Console.Write("-> Press any key to go back");
             Console.ReadLine();
             return null;
         }
@@ -504,7 +504,7 @@ public abstract class CustomerBL
         if (quantity < 1 || quantity > product.quantity)
         {
             AnsiConsole.MarkupLine("[Red]Invalid quantity ![/]");
-            Console.Write("-> Press any button to back");
+            Console.Write("-> Press any key to go back");
             Console.ReadLine();
             return null;
         }
@@ -520,7 +520,7 @@ public abstract class CustomerBL
         Console.Clear();
         Utility.PrintTitle("Online Shop");
         Console.WriteLine("--------------------------------Cancel Order-------------------------------");
-        Console.Write("-> Enter Order Id to cancel: ");
+        Console.Write("-> Enter order id to cancel: ");
         int id = int.Parse(Utility.CheckInput(Console.ReadLine()));
         Order order = OrderDAL.GetOrderById(id);
         if (order == null)
@@ -533,14 +533,14 @@ public abstract class CustomerBL
         else if (order.status == "Comfirmed")
         {
             AnsiConsole.MarkupLine("[Red]This order has been confirmed ![/]");
-            Console.Write("-> Press any button to back");
+            Console.Write("-> Press any key to go back");
             Console.ReadLine();
             return;
         }
         else if (order.status == "Cancelled")
         {
             AnsiConsole.MarkupLine("[Red]This order has been canceled ![/]");
-            Console.Write("-> Press any button to back");
+            Console.Write("-> Press any key to go back");
             Console.ReadLine();
             return;
         }
@@ -554,7 +554,7 @@ public abstract class CustomerBL
         {
             AnsiConsole.MarkupLine("[Red]Failed to cancel the order ![/]");
         }
-        Console.Write("-> Press any button to back");
+        Console.Write("-> Press any key to go back");
         Console.ReadLine();
     }
 
@@ -563,18 +563,18 @@ public abstract class CustomerBL
         Console.Clear();
         Utility.PrintTitle("Online Shop");
         Console.WriteLine("-----------------------------View Order Detail-----------------------------");
-        Console.Write("-> Enter Order Id to view order detail: ");
+        Console.Write("-> Enter order id to view order detail: ");
         int id = int.Parse(Utility.CheckInput(Console.ReadLine()));
         Order order = OrderDAL.GetOrderById(id);
         if (order == null)
         {
             AnsiConsole.MarkupLine("[Red]Invalid Id ![/]");
-            Console.Write("-> Press any button to back");
+            Console.Write("-> Press any key to go back");
             Console.ReadLine();
             return;
         }
         Utility.PrintOrderDetailTable(order);
-        Console.Write("-> Press any button to back");
+        Console.Write("-> Press any key to go back");
         Console.ReadLine();
     }
 }
