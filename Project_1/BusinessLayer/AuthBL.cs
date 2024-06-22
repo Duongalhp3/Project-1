@@ -40,7 +40,7 @@ public abstract class AuthBL
                 return null;
             }
         } while (user == null);
-        Console.WriteLine("System is loging...");
+        Console.WriteLine("System is logging...");
         Thread.Sleep(1000);
         return user;
     }

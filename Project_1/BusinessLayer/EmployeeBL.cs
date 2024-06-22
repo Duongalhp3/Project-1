@@ -69,7 +69,7 @@ public abstract class EmployeeBL
                 }
             }
             Console.WriteLine("Page: <" + currentPage + "/" + pageCount + ">");
-            Console.WriteLine("Press 1 to Add product");
+            Console.WriteLine("Press 1 to Add New Product");
             Console.WriteLine("Press 2 to Edit Product");
             Console.WriteLine("Press 3 to Search Product");
             Console.WriteLine("Press 0 to Exit");

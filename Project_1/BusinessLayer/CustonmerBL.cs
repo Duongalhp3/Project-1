@@ -2,8 +2,11 @@
 
 public abstract class CustomerBL
 {
-    public static void IsLogin(Order order)
+    private static Order order = new Order();
+
+    public static void IsLogin(User user)
     {
+        order.user = user;
         int pageSize = 10;
         int currentPage = 1;
         while (true)
@@ -52,22 +55,22 @@ public abstract class CustomerBL
                 }
                 else if (pressedKey.KeyChar == '1')
                 {
-                    Purchase(order);
+                    Purchase();
                     break;
                 }
                 else if (pressedKey.KeyChar == '2')
                 {
-                    SearchProduct(order);
+                    SearchProduct();
                     break;
                 }
                 else if (pressedKey.KeyChar == '3')
                 {
-                    ViewCart(order);
+                    ViewCart();
                     break;
                 }
                 else if (pressedKey.KeyChar == '4')
                 {
-                    ViewMyOrder(order.user);
+                    ViewMyOrder();
                     break;
                 }
                 else if (pressedKey.KeyChar == '5')
@@ -79,7 +82,7 @@ public abstract class CustomerBL
         }
     }
 
-    private static void Purchase(Order order)
+    private static void Purchase()
     {
         while(true)        
         {
@@ -102,7 +105,7 @@ public abstract class CustomerBL
                 }
                 else if (pressedKey.KeyChar == '1')
                 {
-                    AddProductToCart(order, product);
+                    AddProductToCart(product);
                     break;
                 }
                 else if (pressedKey.KeyChar == '2')
@@ -132,7 +135,7 @@ public abstract class CustomerBL
         }
     }
 
-    private static void SearchProduct(Order order)
+    private static void SearchProduct()
     {
         Console.Clear();
         Utility.PrintTitle("Online Shop");
@@ -188,7 +191,7 @@ public abstract class CustomerBL
                 }
                 else if (pressedKey.KeyChar == '1')
                 {
-                    Purchase(order);
+                    Purchase();
                     return;
                 }
             }
@@ -201,7 +204,7 @@ public abstract class CustomerBL
         }
     }
 
-    private static void ViewCart(Order order)
+    private static void ViewCart()
     {
         int pageSize = 10;
         int currentPage = 1;
@@ -267,7 +270,7 @@ public abstract class CustomerBL
         }
     }
 
-    public static void ViewMyOrder(User user)
+    public static void ViewMyOrder()
     {
         int pageSize = 10;
         int currentPage = 1;
@@ -276,7 +279,7 @@ public abstract class CustomerBL
             Console.Clear();
             Utility.PrintTitle("Caffe Store");
             Console.WriteLine("------------------------------View My Order-----------------------------");
-            List<Order> orderPurchasedList = OrderDAL.GetAllOrderByUser(user);
+            List<Order> orderPurchasedList = OrderDAL.GetAllOrderByUser(order.user);
             int pageCount = (int)Math.Ceiling((double)orderPurchasedList.Count / pageSize);
             List<Order> orderList = orderPurchasedList.Skip(pageSize * (currentPage - 1)).Take(pageSize).ToList();
             if (orderList.Count == pageSize)
@@ -327,7 +330,7 @@ public abstract class CustomerBL
         }
     }
 
-    private static void AddProductToCart(Order order, Product newProduct)
+    private static void AddProductToCart(Product newProduct)
     {
         Product product = ProductDAL.GetProductById(newProduct.id);
         Product oldProduct = order.orderProductList.Find(x => x.id == newProduct.id);

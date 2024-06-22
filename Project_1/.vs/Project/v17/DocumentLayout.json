@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\businesslayer\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:businesslayer\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\dataacesslayer\\orderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:dataacesslayer\\orderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\businesslayer\\custonmerbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:businesslayer\\custonmerbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\dataacesslayer\\productdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,8 +23,12 @@
       "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:dataacesslayer\\userdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\dataacesslayer\\orderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:dataacesslayer\\orderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\model\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:model\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\businesslayer\\employeebl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,12 +39,8 @@
       "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:businesslayer\\authbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\businesslayer\\custonmerbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:businesslayer\\custonmerbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|d:\\code\\duongalhp3\\project-1\\project_1\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D33432-61A4-4383-AC04-5D63122E6C56}|Project.csproj|solutionrelative:utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,59 +58,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Model\\Order.cs",
+              "RelativeDocumentMoniker": "Model\\Order.cs",
+              "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Model\\Order.cs",
+              "RelativeToolTip": "Model\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:56:12.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UserDAL.cs",
               "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\UserDAL.cs",
               "RelativeDocumentMoniker": "DataAcessLayer\\UserDAL.cs",
               "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\UserDAL.cs",
               "RelativeToolTip": "DataAcessLayer\\UserDAL.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAAAJgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-19T17:11:35.102Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ProductDAL.cs",
               "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\ProductDAL.cs",
               "RelativeDocumentMoniker": "DataAcessLayer\\ProductDAL.cs",
               "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\ProductDAL.cs",
               "RelativeToolTip": "DataAcessLayer\\ProductDAL.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADIAAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-19T16:57:36.855Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AdminBL.cs",
               "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\AdminBL.cs",
               "RelativeDocumentMoniker": "BusinessLayer\\AdminBL.cs",
               "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\AdminBL.cs",
               "RelativeToolTip": "BusinessLayer\\AdminBL.cs",
-              "ViewState": "AQIAALwAAAAAAAAAAAAowJEAAAAlAAAA",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAAAMYAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-19T14:51:57.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "Utility.cs",
               "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Utility.cs",
               "RelativeDocumentMoniker": "Utility.cs",
               "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Utility.cs",
               "RelativeToolTip": "Utility.cs",
-              "ViewState": "AQIAANAAAAAAAAAAAAAcwOcAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEwAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T15:12:02.477Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AuthBL.cs",
               "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\AuthBL.cs",
               "RelativeDocumentMoniker": "BusinessLayer\\AuthBL.cs",
@@ -119,54 +136,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "EmployeeBL.cs",
               "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\EmployeeBL.cs",
               "RelativeDocumentMoniker": "BusinessLayer\\EmployeeBL.cs",
               "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\EmployeeBL.cs",
               "RelativeToolTip": "BusinessLayer\\EmployeeBL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAOAAAAANAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAEwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T15:08:57.14Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "CustonmerBL.cs",
               "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\CustonmerBL.cs",
               "RelativeDocumentMoniker": "BusinessLayer\\CustonmerBL.cs",
               "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\BusinessLayer\\CustonmerBL.cs",
               "RelativeToolTip": "BusinessLayer\\CustonmerBL.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAQAAAA",
+              "ViewState": "AQIAADMCAAAAAAAAAAAAANwBAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T15:08:48.79Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "OrderDAL.cs",
               "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\OrderDAL.cs",
               "RelativeDocumentMoniker": "DataAcessLayer\\OrderDAL.cs",
               "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\DataAcessLayer\\OrderDAL.cs",
               "RelativeToolTip": "DataAcessLayer\\OrderDAL.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAAAEgAAABZAAAA",
+              "ViewState": "AQIAAKcAAAAAAAAAAAAAAHMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T15:05:12.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Code\\Duongalhp3\\Project-1\\Project_1\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAARAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAC8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T15:04:59.259Z"
+              "WhenOpened": "2024-06-16T15:04:59.259Z",
+              "EditorCaption": ""
             }
           ]
         }

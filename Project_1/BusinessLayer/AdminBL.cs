@@ -32,7 +32,7 @@ public abstract class AdminBL
             Console.WriteLine("Press 2 to Search User");
             Console.WriteLine("Press 3 to Edit Account");
             Console.WriteLine("Press 4 to Change Password");
-            Console.WriteLine("Press 0 to Exit");
+            Console.WriteLine("Press 0 to Logout");
             while (true)
             {
                 ConsoleKeyInfo pressedKey = Console.ReadKey(intercept: true);

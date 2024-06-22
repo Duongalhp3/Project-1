@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using Spectre.Console;
 
 public abstract class OrderDAL
 {
@@ -106,7 +107,7 @@ public abstract class OrderDAL
         {
             if (!ProductDAL.CheckQuantity(orderProduct))
             {
-                Console.WriteLine("Mat hang co id = " + orderProduct.id + "trong gio hang cua ban khong du so luong hoac het hang");
+                AnsiConsole.MarkupLine("[Red]The item with id = " + orderProduct.id + " in your cart does not have enough quantity or is out of stock[/]");
                 canPayment = false;
             }
         }

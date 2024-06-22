@@ -1,6 +1,4 @@
-﻿using Spectre.Console;
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {
@@ -8,7 +6,7 @@ class Program
         {
             Console.Clear();
             Utility.PrintTitle("Caffe Store");
-            AnsiConsole.MarkupLine("----------------------------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------------------------------");
             Console.WriteLine("Press 1 to Login");
             Console.WriteLine("Press 2 to Register");
             Console.WriteLine("Press 0 to Exit Program");
@@ -24,11 +22,7 @@ class Program
                     User user = AuthBL.Login();
                     if (user != null && user.role == "Customer")
                     {
-                        Order order = new Order
-                        {
-                            user = user,
-                        };
-                        CustomerBL.IsLogin(order);
+                        CustomerBL.IsLogin(user);
                     }
                     else if (user != null && user.role == "Admin")
                     {

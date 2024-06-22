@@ -33,7 +33,7 @@ public abstract class Utility
     {
         while (string.IsNullOrWhiteSpace(input))
         {
-            Console.Write("Khong duoc de trong, vui long nhap lai: ");
+            AnsiConsole.Markup("[Red]Cannot be empty, please re-enter: [/]");
             input = Console.ReadLine();
         }
         return input;
@@ -51,14 +51,14 @@ public abstract class Utility
             }
             else
             {
-                Console.Write("Invalid input please re_input: ");
+                AnsiConsole.Markup("[Red]Invalid input, please re_input: [/]");
                 input = Console.ReadLine();
             }
         }
         return result;
     }
 
-    public static void PrintOrderTable(List<Order> ordertList, int option)// 1: table for customer, 2: table for admin
+    public static void PrintOrderTable(List<Order> orderList, int option)// 1: table for customer, 2: table for admin
     {
         if (option == 1)
         {
@@ -67,7 +67,7 @@ public abstract class Utility
             table.AddColumn(new TableColumn("[blue]Date Time[/]").LeftAligned());
             table.AddColumn(new TableColumn("[blue]Total Price[/]").LeftAligned());
             table.AddColumn(new TableColumn("[blue]Status[/]").LeftAligned());
-            foreach (Order order in ordertList)
+            foreach (Order order in orderList)
             {
                 table.AddRow(order.id.ToString(), order.dateTime.ToString(), ConvertToCurrency(order.totalPrice), order.status);
             }
@@ -83,7 +83,7 @@ public abstract class Utility
             table.AddColumn(new TableColumn("[blue]Date Time[/]").LeftAligned());
             table.AddColumn(new TableColumn("[blue]Total Price[/]").LeftAligned());
             table.AddColumn(new TableColumn("[blue]Status[/]").LeftAligned());
-            foreach (Order order in ordertList)
+            foreach (Order order in orderList)
             {
                 table.AddRow(order.id.ToString(), order.user.userName, order.dateTime.ToString(), ConvertToCurrency(order.totalPrice), order.status);
             }
@@ -215,8 +215,8 @@ public abstract class Utility
     {
         var table = new Table();
         table.Title("Revenue Statistics");
-        table.AddColumn("Statistics");
-        table.AddColumn("Amount/Quantity");
+        table.AddColumn("[blue]Statistics[/]");
+        table.AddColumn("[blue]Amount/Quantity[/]");
         table.AddRow("Number of Orders Today:\nRevenue Today:", orderCountDay + "\n" + Utility.ConvertToCurrency(revenueDay));
         table.AddEmptyRow();
         table.AddRow("Number of Orders This Month:\nRevenue This Month:", orderCountMonth + "\n" + Utility.ConvertToCurrency(revenueMonth));

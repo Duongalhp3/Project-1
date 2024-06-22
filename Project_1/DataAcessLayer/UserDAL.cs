@@ -141,11 +141,11 @@ public abstract class UserDAL
 
     public static int UpdateUserAttribute(int userId, string attributeName, object newValue)
     {
-        string query = $@"UPDATE products SET {attributeName} = @newValue WHERE product_id = @productId;";
+        string query = $@"UPDATE users SET {attributeName} = @newValue WHERE user_id = @userId;";
         using (MySqlCommand command = new MySqlCommand(query))
         {
             command.Parameters.AddWithValue("@newValue", newValue);
-            command.Parameters.AddWithValue("@productId", userId);
+            command.Parameters.AddWithValue("@userId", userId);
             return DataBase.ExecuteNonQuery(command);
         }
     }
