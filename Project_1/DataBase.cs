@@ -3,7 +3,7 @@ using System.Data;
 
 public class DataBase
 {
-    private static MySqlConnection connection = new MySqlConnection(@"server=localhost;user id=root;password=123456789;port=3306;database=storemanager;");
+    private static MySqlConnection connection = new MySqlConnection(@"server=localhost;user id=root;password=123456789;port=3306;database=OnlineShop;");
 
     public static MySqlDataReader ExecuteQuery(MySqlCommand command)
     {

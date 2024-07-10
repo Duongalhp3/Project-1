@@ -280,6 +280,13 @@ public abstract class CustomerBL
             Utility.PrintTitle("Caffe Store");
             Console.WriteLine("------------------------------View My Order-----------------------------");
             List<Order> orderPurchasedList = OrderDAL.GetAllOrderByUser(order.user);
+            if(orderPurchasedList == null)
+            {
+                AnsiConsole.MarkupLine("[Red]My order empty ![/]");
+                Console.Write("-> Press any button to back");
+                Console.ReadLine();
+                return;
+            }
             int pageCount = (int)Math.Ceiling((double)orderPurchasedList.Count / pageSize);
             List<Order> orderList = orderPurchasedList.Skip(pageSize * (currentPage - 1)).Take(pageSize).ToList();
             if (orderList.Count == pageSize)
@@ -356,7 +363,7 @@ public abstract class CustomerBL
         Utility.PrintTitle("Online Shop");
         Console.WriteLine("-------------------Edit Product In Cart------------------");
         Console.Write("-> Enter the product ID to edit: ");
-        int id = int.Parse(Utility.CheckInput(Console.ReadLine()));
+        int id = Utility.CheckDigitalInput(Utility.CheckInput(Console.ReadLine()));
         Product product = order.orderProductList.Find(x => x.id == id);
         if (product == null)
         {
@@ -479,7 +486,7 @@ public abstract class CustomerBL
     private static Product ChoiceProduct()
     {
         Console.Write("-> Enter product id to purchase: ");
-        int id = int.Parse(Utility.CheckInput(Console.ReadLine()));
+        int id = Utility.CheckDigitalInput(Utility.CheckInput(Console.ReadLine()));
         Product product = ProductDAL.GetProductById(id);
         if (product == null)
         {
@@ -503,7 +510,7 @@ public abstract class CustomerBL
             return null;
         }
         Console.Write("-> Enter quantity: ");
-        int quantity = int.Parse(Utility.CheckInput(Console.ReadLine()));
+        int quantity = Utility.CheckDigitalInput(Utility.CheckInput(Console.ReadLine()));
         if (quantity < 1 || quantity > product.quantity)
         {
             AnsiConsole.MarkupLine("[Red]Invalid quantity ![/]");
@@ -524,7 +531,7 @@ public abstract class CustomerBL
         Utility.PrintTitle("Online Shop");
         Console.WriteLine("--------------------------------Cancel Order-------------------------------");
         Console.Write("-> Enter order id to cancel: ");
-        int id = int.Parse(Utility.CheckInput(Console.ReadLine()));
+        int id = Utility.CheckDigitalInput(Utility.CheckInput(Console.ReadLine()));
         Order order = OrderDAL.GetOrderById(id);
         if (order == null)
         {
@@ -567,7 +574,7 @@ public abstract class CustomerBL
         Utility.PrintTitle("Online Shop");
         Console.WriteLine("-----------------------------View Order Detail-----------------------------");
         Console.Write("-> Enter order id to view order detail: ");
-        int id = int.Parse(Utility.CheckInput(Console.ReadLine()));
+        int id = Utility.CheckDigitalInput(Utility.CheckInput(Console.ReadLine()));
         Order order = OrderDAL.GetOrderById(id);
         if (order == null)
         {

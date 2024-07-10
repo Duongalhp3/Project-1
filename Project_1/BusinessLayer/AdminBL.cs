@@ -158,7 +158,7 @@ public abstract class AdminBL
         Utility.PrintTitle("User Management");
         Console.WriteLine("--------------------------------Edit Account-------------------------------");
         Console.Write("-> Enter user id to edit: ");
-        int id = int.Parse(Utility.CheckInput(Console.ReadLine()));
+        int id = Utility.CheckDigitalInput(Utility.CheckInput(Console.ReadLine()));
         User user = UserDAL.GetUserById(id);
         if (user == null || user.id == 1)
         {

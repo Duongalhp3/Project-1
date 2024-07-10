@@ -118,6 +118,13 @@ public abstract class EmployeeBL
             Console.Clear();
             Utility.PrintTitle("Order Management");
             List<Order> orderList = OrderDAL.GetAllOrder();
+            if(orderList == null)
+            {
+                AnsiConsole.MarkupLine("[Red]Order empty ![/]");
+                Console.Write("-> Press any key to come back");
+                Console.ReadLine();
+                return;
+            }
             int pageCount = (int)Math.Ceiling((double)orderList.Count / pageSize);
             List<Order> orders = orderList.Skip(pageSize * (currentPage - 1)).Take(pageSize).ToList();
             if (orderList.Count == pageSize)
